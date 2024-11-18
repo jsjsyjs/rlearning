@@ -13,7 +13,7 @@
 
 <meta name="date" content="2024-11-18" />
 
-<title>one way ANOVA</title>
+<title>Independent Samples t-Test</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1562,195 +1562,161 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">one way ANOVA</h1>
+<h1 class="title toc-ignore">Independent Samples t-Test</h1>
 <h4 class="author">Your Name</h4>
 <h4 class="date">2024-11-18</h4>
 
 </div>
 
 
-<style>
-
-body {
-line-height: 1.8;
-font-size: 18px; 
-}
-
-p {
-line-height: 1.8;
-font-size: 18px;
-}
-
-h1 {
-font-size: 22px; 
-}
-h2 {
-font-size: 20px; 
-}
-h3 {
-font-size: 18px; 
-}
-h4, h5, h6 {
-font-size: 18px; 
-}
-
-h1, h2, h3, h4, h5, h6 {
-margin-top: 20px;
-margin-bottom: 10px;
-}
-</style>
-<div id="起源" class="section level2">
-<h2>1 起源</h2>
-<p>单因素方差分析（One-Way ANOVA）起源于统计学家罗纳德·费舍尔（Ronald A.
-Fisher）的研究，最初用于农业实验中的数据分析。费舍尔发明了方差分析这一方法，以比较多组实验数据之间的均值差异，从而确定某种处理手段是否对实验结果有显著影响。单因素方差分析最早用于研究不同施肥方式对作物产量的影响，后来被广泛应用于各个科学领域。</p>
-</div>
-<div id="原理" class="section level2">
-<h2>2 原理</h2>
-<p>单因素方差分析是一种用于比较多组样本均值差异的统计方法。其核心思想是通过比较组间变异与组内变异的大小，判断不同组之间是否存在显著的均值差异。单因素方差分析的假设检验过程包括：</p>
+<div id="原理" class="section level1">
+<h1>1 原理</h1>
+<p>独立样本 t 检验（Independent Samples
+t-Test）是一种假设检验方法，用于比较两组独立样本的均值是否存在显著差异。</p>
+<div id="假设" class="section level2">
+<h2>1.1 假设</h2>
 <ul>
-<li><strong>原假设（<span class="math inline">\(H_0\)</span>）</strong>：所有组的均值相等，即各组之间无显著差异。</li>
-<li><strong>备择假设（<span class="math inline">\(H_1\)</span>）</strong>：至少有一组的均值与其他组不同。</li>
+<li><strong>原假设 (<span class="math inline">\(H_0\)</span>)</strong>：两组总体均值相等，即 <span class="math inline">\(\mu_1 = \mu_2\)</span>。</li>
+<li><strong>备择假设 (<span class="math inline">\(H_1\)</span>)</strong>：两组总体均值不相等，即
+<span class="math inline">\(\mu_1 \neq \mu_2\)</span>（双尾检验）。</li>
 </ul>
-<p>通过计算方差比率（F值），并与F分布的临界值进行比较，可以判断是否拒绝原假设。如果F值足够大，意味着组间变异显著大于组内变异，从而可以认为不同组之间存在显著差异。</p>
-<p>单因素方差分析的主要步骤包括：</p>
+</div>
+<div id="计算公式" class="section level2">
+<h2>1.2 计算公式</h2>
+<p>t 值通过以下公式计算： <span class="math display">\[
+t = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} +
+\frac{s_2^2}{n_2}}}
+\]</span> 其中： - <span class="math inline">\(\bar{X}_1,
+\bar{X}_2\)</span>：两组样本的均值； - <span class="math inline">\(s_1^2, s_2^2\)</span>：两组样本的方差； - <span class="math inline">\(n_1, n_2\)</span>：两组样本的大小。</p>
+</div>
+<div id="自由度" class="section level2">
+<h2>1.3 自由度</h2>
+<p>假设两组样本方差相等时，自由度为： <span class="math display">\[
+df = n_1 + n_2 - 2
+\]</span> 若方差不相等（Welch 检验），自由度根据 Welch-Satterthwaite
+方程计算。</p>
+</div>
+<div id="前提条件" class="section level2">
+<h2>1.4 前提条件</h2>
 <ol style="list-style-type: decimal">
-<li><strong>计算总变异</strong>：总变异来源于所有观测值与总体均值的差异。</li>
-<li><strong>分解为组间变异和组内变异</strong>：组间变异衡量不同组均值之间的差异，组内变异衡量每组内部数据的波动。</li>
-<li><strong>计算F统计量</strong>：通过组间均方（MSB）和组内均方（MSW）的比值计算F值。</li>
+<li>两组样本相互独立；</li>
+<li>数据分布近似正态；</li>
+<li>两组样本具有相同的方差（可通过方差检验检查）。</li>
 </ol>
-<p>公式如下：</p>
-<p><span class="math display">\[
-F = \frac{MSB}{MSW}
-\]</span></p>
-<p>其中，<span class="math inline">\(MSB\)</span> 表示组间均方，<span class="math inline">\(MSW\)</span> 表示组内均方。</p>
+<hr />
 </div>
-<div id="适用范围" class="section level2">
-<h2>3 适用范围</h2>
-<p>单因素方差分析适用于以下情况：</p>
-<ul>
-<li><strong>因变量</strong>：因变量为连续型数据，且满足正态性假设。</li>
-<li><strong>自变量</strong>：自变量为分类变量，且包含两个或两个以上的独立组。</li>
-<li><strong>方差齐性</strong>：各组数据的方差应相等，即满足方差齐性假设。</li>
-</ul>
-<p>单因素方差分析常用于检测多个实验组之间的均值差异，适用于实验设计中只有一个因素的情况，如不同教学方法、不同药物剂量等对结果的影响。</p>
 </div>
-<div id="应用情境" class="section level2">
-<h2>4 应用情境</h2>
-<p>单因素方差分析在许多实际应用中都有广泛的应用。例如：</p>
+<div id="适用范围" class="section level1">
+<h1>2 适用范围</h1>
+<p>独立样本 t 检验适用于以下情形：</p>
+<div id="数据类型" class="section level2">
+<h2>2.1 数据类型</h2>
 <ul>
-<li><strong>农业研究</strong>：比较不同施肥方式对作物产量的影响。</li>
-<li><strong>医学实验</strong>：比较不同药物剂量对病人血压的影响。</li>
-<li><strong>教育研究</strong>：比较不同教学方法对学生成绩的影响。</li>
-<li><strong>市场研究</strong>：比较不同广告策略对消费者购买意向的影响。</li>
+<li>数据为连续型变量（如体重、分数、测量值）。</li>
+<li>两组样本相互独立。</li>
 </ul>
 </div>
-<div id="优缺点" class="section level2">
-<h2>5 优缺点</h2>
-<div id="优点" class="section level3">
-<h3>优点</h3>
+<div id="检验目标" class="section level2">
+<h2>2.2 检验目标</h2>
 <ul>
-<li><strong>适用于多组比较</strong>：单因素方差分析可以同时比较多个组的均值，避免了多次t检验带来的显著性水平问题。</li>
-<li><strong>简单易懂</strong>：其计算过程和结果解释相对简单，便于理解和应用。</li>
+<li>比较两组样本均值是否显著不同。</li>
 </ul>
 </div>
-<div id="缺点" class="section level3">
-<h3>缺点</h3>
+<div id="使用限制" class="section level2">
+<h2>2.3 使用限制</h2>
 <ul>
-<li><strong>对正态性和方差齐性的要求较高</strong>：单因素方差分析要求数据服从正态分布，且各组方差相等。如果不满足这些假设，结果的可靠性可能受到影响。</li>
-<li><strong>无法识别具体差异的组别</strong>：当拒绝原假设时，单因素方差分析只能说明存在显著差异，但无法识别具体哪两组之间存在差异，需要进一步的事后检验（如Tukey检验）。</li>
+<li>不适用于相关样本（如配对数据）。</li>
+<li>数据应满足正态性和方差齐性假设。</li>
 </ul>
+<hr />
 </div>
 </div>
-<div id="在r中的实现及结果解释" class="section level2">
-<h2>6 在R中的实现及结果解释</h2>
-<p>在R中，单因素方差分析可以通过<code>aov()</code>函数实现。以下是一个实现示例：</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># 示例数据：不同教学方法对学生成绩的影响</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>teaching_method <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">each =</span> <span class="dv">10</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">87</span>, <span class="dv">86</span>, <span class="dv">89</span>, <span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">84</span>, <span class="dv">87</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>           <span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">80</span>, <span class="dv">79</span>, <span class="dv">81</span>, <span class="dv">83</span>, <span class="dv">85</span>, <span class="dv">84</span>, <span class="dv">80</span>, <span class="dv">81</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>           <span class="dv">92</span>, <span class="dv">94</span>, <span class="dv">93</span>, <span class="dv">95</span>, <span class="dv">91</span>, <span class="dv">90</span>, <span class="dv">96</span>, <span class="dv">94</span>, <span class="dv">93</span>, <span class="dv">92</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># 创建数据框</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">TeachingMethod =</span> teaching_method, <span class="at">Score =</span> score)</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># 进行单因素方差分析</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(Score <span class="sc">~</span> TeachingMethod, <span class="at">data =</span> data)</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co"># 输出结果</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span></code></pre></div>
-<div id="结果解释" class="section level3">
-<h3>结果解释</h3>
-<p>运行上述代码后，将输出单因素方差分析的结果，主要包括以下内容：</p>
-<ul>
-<li><strong>Df（自由度）</strong>：表示组间和组内的自由度。</li>
-<li><strong>Sum
-Sq（平方和）</strong>：表示组间和组内的平方和，用于计算变异。</li>
-<li><strong>Mean
-Sq（均方）</strong>：表示平方和除以自由度得到的均方。</li>
-<li><strong>F value</strong>：表示组间均方与组内均方的比值。</li>
-<li><strong>Pr(&gt;F)</strong>：表示p值，用于判断原假设是否成立。如果p值小于显著性水平（如0.05），则拒绝原假设，说明组间均值之间存在显著差异。</li>
-</ul>
-<p>例如，如果输出结果为：</p>
-<pre><code>               Df Sum Sq Mean Sq F value Pr(&gt;F)  
-TeachingMethod  2  794.2  397.1   14.32  1.2e-05 ***
-Residuals      27  749.2   27.8                  </code></pre>
-<ul>
-<li><strong>F value = 14.32</strong>：表示F统计量的值。</li>
-<li><strong>p-value =
-1.2e-05</strong>：p值小于0.05，说明在95%的置信水平下，可以拒绝原假设，表明不同教学方法之间存在显著差异。</li>
-</ul>
+<div id="应用情境" class="section level1">
+<h1>3 应用情境</h1>
+<p>以下是独立样本 t 检验的一些典型应用场景：</p>
+<div id="教育领域" class="section level2">
+<h2>3.1 教育领域</h2>
+<p>比较两种教学方法对学生成绩的影响： -
+<strong>实验组</strong>：使用新教学方法的学生； -
+<strong>对照组</strong>：使用传统教学方法的学生。</p>
 </div>
-<div id="结果的可视化" class="section level3">
-<h3>结果的可视化</h3>
-<p>可以使用R中的<code>ggplot2</code>包对结果进行可视化，以更直观地展示各组均值的差异。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># 加载ggplot2包</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># 绘制箱线图</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> TeachingMethod, <span class="at">y =</span> Score, <span class="at">fill =</span> TeachingMethod)) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;不同教学方法对学生成绩的影响&quot;</span>, <span class="at">x =</span> <span class="st">&quot;教学方法&quot;</span>, <span class="at">y =</span> <span class="st">&quot;成绩&quot;</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p>上述代码将绘制一个箱线图，用于展示不同教学方法对学生成绩的分布情况，通过比较箱线图可以更直观地看到各组之间的差异。</p>
+<div id="医学领域" class="section level2">
+<h2>3.2 医学领域</h2>
+<p>比较新药和安慰剂对患者疗效的差异： -
+<strong>组1</strong>：接受新药治疗的患者； -
+<strong>组2</strong>：接受安慰剂治疗的患者。</p>
 </div>
-<div id="多重比较" class="section level3">
-<h3>多重比较</h3>
-<p>当单因素方差分析的结果显示不同组之间存在显著差异时，需要进一步进行多重比较，以确定具体哪些组之间存在差异。R中可以使用<code>TukeyHSD()</code>函数进行多重比较。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># 进行多重比较（Tukey检验）</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>tukey_result <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_result)</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># 输出多重比较结果</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">print</span>(tukey_result)</span></code></pre></div>
-</div>
-<div id="多重比较结果解释" class="section level3">
-<h3>多重比较结果解释</h3>
-<p>多重比较的结果包括各组之间的均值差异的估计值、置信区间和p值。如果p值小于显著性水平（如0.05），则表明这两组之间的均值差异显著。例如：</p>
-<pre><code>Tukey multiple comparisons of means
-  95% family-wise confidence level
-
-Fit: aov(formula = Score ~ TeachingMethod, data = data)
-
-$TeachingMethod
-           diff       lwr       upr     p adj
-B-A -7.5000000 -11.25004 -3.749960 0.0001321
-C-A  4.6000000   0.84996  8.350040 0.0156234
-C-B 12.1000000   8.34996 15.850040 0.0000012</code></pre>
-<ul>
-<li><strong>B-A</strong>：组B与组A的均值差为-7.5，p值为0.0001321，说明组B与组A之间存在显著差异。</li>
-<li><strong>C-A</strong>：组C与组A的均值差为4.6，p值为0.0156234，说明组C与组A之间存在显著差异。</li>
-<li><strong>C-B</strong>：组C与组B的均值差为12.1，p值为0.0000012，说明组C与组B之间存在显著差异。</li>
-</ul>
+<div id="商业领域" class="section level2">
+<h2>3.3 商业领域</h2>
+<p>分析不同顾客群体对产品评分的差异： -
+<strong>组1</strong>：线上顾客评分； -
+<strong>组2</strong>：线下顾客评分。</p>
+<hr />
 </div>
 </div>
-<div id="小结" class="section level2">
-<h2>7 小结</h2>
-<ul>
-<li>单因素方差分析用于比较多个组的均值差异，判断不同处理组之间是否存在显著差异。</li>
-<li>其优点是可以同时比较多组，简单易懂，但对数据的正态性和方差齐性有较高要求。</li>
-<li>通过R中的<code>aov()</code>函数可以实现单因素方差分析，结合可视化可以更好地展示结果。</li>
-<li>在农业、医学、教育等领域有广泛的应用价值。</li>
-<li>当发现显著差异时，需要进一步的事后检验来确定具体差异所在的组别。</li>
-</ul>
+<div id="优缺点" class="section level1">
+<h1>4 优缺点</h1>
+<div id="优点" class="section level2">
+<h2>4.1 优点</h2>
+<ol style="list-style-type: decimal">
+<li><strong>易于理解</strong>：适合初学者和基础研究；</li>
+<li><strong>高效</strong>：对小样本数据同样适用；</li>
+<li><strong>适用范围广</strong>：在多个领域有广泛应用。</li>
+</ol>
+</div>
+<div id="缺点" class="section level2">
+<h2>4.2 缺点</h2>
+<ol style="list-style-type: decimal">
+<li><strong>依赖假设</strong>：需要满足独立性、正态性和方差齐性假设；</li>
+<li><strong>局限性</strong>：仅适用于两组数据，无法比较多组均值（需用
+ANOVA）；</li>
+<li><strong>敏感性</strong>：小样本或假设偏离可能导致结果不可靠。</li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="在r中的实现" class="section level1">
+<h1>5 在R中的实现</h1>
+<p>以下代码展示如何在 R 中实现独立样本 t 检验。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># 设置随机种子</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># 生成两组数据</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>group1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">10</span>)  <span class="co"># 第一组数据</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>group2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)  <span class="co"># 第二组数据</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># 独立样本 t 检验，假设方差相等</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>t_test_equal <span class="ot">&lt;-</span> <span class="fu">t.test</span>(group1, group2, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">print</span>(t_test_equal)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># 独立样本 t 检验，不假设方差相等</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>t_test_unequal <span class="ot">&lt;-</span> <span class="fu">t.test</span>(group1, group2, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="fu">print</span>(t_test_unequal)</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co"># 使用箱线图对两组数据进行可视化</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="fu">boxplot</span>(group1, group2,</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>        <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Group 1&quot;</span>, <span class="st">&quot;Group 2&quot;</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Boxplot of Two Groups&quot;</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Values&quot;</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>))</span></code></pre></div>
+</div>
+<div id="小结" class="section level1">
+<h1>6 小结</h1>
+<p>独立样本 t
+检验是统计分析中常用的方法，主要用于比较两组独立样本的均值差异。总结如下：</p>
+<ol style="list-style-type: decimal">
+<li><strong>适用性</strong>：独立样本 t
+检验适用于独立的两组样本，数据为连续型变量。</li>
+<li><strong>前提条件</strong>：确保数据满足独立性、正态性和方差齐性假设。</li>
+<li><strong>方法变体</strong>：若方差齐性假设不满足，可使用 Welch t
+检验。</li>
+<li><strong>解释方式</strong>：结合可视化（如箱线图）和 t 检验的 p
+值进行数据差异的解释。</li>
+</ol>
+<p><strong>应用领域</strong>：因其简单易用和高效，独立样本 t
+检验广泛应用于教育、医学和商业等领域。</p>
+<p>通过 R 实现的独立样本 t
+检验，研究者可以快速、准确地分析两组样本的均值差异，为决策提供可靠的统计依据。</p>
 </div>
 
 
