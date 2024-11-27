@@ -1882,8 +1882,9 @@ Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}
 ## groupB:tim2  0.500 -0.707 -0.707
 ## optimizer (nloptwrap) convergence code: 0 (OK)
 ## boundary (singular) fit: see help(&#39;isSingular&#39;)</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># 如果group与time交互效应显著，可以使用emmeans包计算简单效应</span></span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># 如果group与time交互效应显著</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="co"># 1-可以使用emmeans包计算简单效应</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span></code></pre></div>
 <pre><code>## Welcome to emmeans.
 ## Caution: You lose important information if you filter this package&#39;s results.
 ## See &#39;? untidy&#39;</code></pre>
@@ -1900,7 +1901,7 @@ Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}
 ##  X2     53.2 2.57 28     47.9     58.5
 ## 
 ## Confidence level used: 0.95</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># 对组别与时间点之间进行多重比较</span></span>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># 2-对组别与时间点之间进行多重比较</span></span>
 <span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>pairwise_comparisons <span class="ot">&lt;-</span> <span class="fu">contrast</span>(<span class="fu">emmeans</span>(anova_result, <span class="sc">~</span> group <span class="sc">*</span> time), <span class="at">method =</span> <span class="st">&quot;pairwise&quot;</span>, <span class="at">adjust =</span> <span class="st">&quot;tukey&quot;</span>)</span>
 <span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a><span class="fu">summary</span>(pairwise_comparisons)</span></code></pre></div>
 <pre><code>##  contrast    estimate   SE df t.ratio p.value
@@ -1912,10 +1913,10 @@ Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}
 ##  A X2 - B X2   -4.225 3.64 28  -1.161  0.6560
 ## 
 ## P value adjustment: tukey method for comparing a family of 4 estimates</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># 使用 afex 包自动计算效应大小</span></span>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># 3-使用 afex 包自动计算效应大小</span></span>
 <span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="fu">summary</span>(anova_result)<span class="sc">$</span>effect.size</span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># 可视化：绘制组间和组内因素的交互效应</span></span>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># 4-可视化：绘制组间和组内因素的交互效应</span></span>
 <span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> score, <span class="at">color =</span> group, <span class="at">group =</span> group)) <span class="sc">+</span></span>
 <span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
