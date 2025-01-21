@@ -11,7 +11,7 @@
 
 <meta name="author" content="ChatGPT 4o" />
 
-<meta name="date" content="2024-11-20" />
+<meta name="date" content="2025-01-21" />
 
 <title>Mixed Model</title>
 
@@ -1564,7 +1564,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Mixed Model</h1>
 <h4 class="author">ChatGPT 4o</h4>
-<h4 class="date">2024-11-20</h4>
+<h4 class="date">2025-01-21</h4>
 
 </div>
 
@@ -1706,6 +1706,139 @@ Y = X\beta + Z\gamma + \epsilon
 ##            (Intr) time  
 ## time       -0.765       
 ## treatmentB -0.456  0.000</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">str</span>(mixed_model)</span></code></pre></div>
+<pre><code>## Formal class &#39;lmerMod&#39; [package &quot;lme4&quot;] with 13 slots
+##   ..@ resp   :Reference class &#39;lmerResp&#39; [package &quot;lme4&quot;] with 9 fields
+##   .. ..$ Ptr    :&lt;externalptr&gt; 
+##   .. ..$ mu     : num [1:200] 81.6 81.6 81.5 81.5 79.9 ...
+##   .. ..$ offset : num [1:200] 0 0 0 0 0 0 0 0 0 0 ...
+##   .. ..$ sqrtXwt: num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ sqrtrwt: num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ weights: num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ wtres  : num [1:200] -1.21 2.14 20.08 5.25 2.97 ...
+##   .. ..$ y      : num [1:200] 80.4 83.7 101.6 86.7 82.9 ...
+##   .. ..$ REML   : int 3
+##   .. ..and 28 methods, of which 14 are  possibly relevant:
+##   .. ..  allInfo, copy#envRefClass, initialize, initialize#lmResp,
+##   .. ..  initializePtr, initializePtr#lmResp, objective, ptr, ptr#lmResp,
+##   .. ..  setOffset, setResp, setWeights, updateMu, wrss
+##   ..@ Gp     : int [1:2] 0 50
+##   ..@ call   : language lmer(formula = score ~ time + treatment + (1 | subject_id), data = data)
+##   ..@ frame  :&#39;data.frame&#39;:  200 obs. of  4 variables:
+##   .. ..$ score     : num [1:200] 80.4 83.7 101.6 86.7 82.9 ...
+##   .. ..$ time      : int [1:200] 1 2 3 4 1 2 3 4 1 2 ...
+##   .. ..$ treatment : Factor w/ 2 levels &quot;A&quot;,&quot;B&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ subject_id: int [1:200] 1 1 1 1 2 2 2 2 3 3 ...
+##   .. ..- attr(*, &quot;terms&quot;)=Classes &#39;terms&#39;, &#39;formula&#39;  language score ~ time + treatment + (1 + subject_id)
+##   .. .. .. ..- attr(*, &quot;variables&quot;)= language list(score, time, treatment, subject_id)
+##   .. .. .. ..- attr(*, &quot;factors&quot;)= int [1:4, 1:3] 0 1 0 0 0 0 1 0 0 0 ...
+##   .. .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. .. ..$ : chr [1:4] &quot;score&quot; &quot;time&quot; &quot;treatment&quot; &quot;subject_id&quot;
+##   .. .. .. .. .. ..$ : chr [1:3] &quot;time&quot; &quot;treatment&quot; &quot;subject_id&quot;
+##   .. .. .. ..- attr(*, &quot;term.labels&quot;)= chr [1:3] &quot;time&quot; &quot;treatment&quot; &quot;subject_id&quot;
+##   .. .. .. ..- attr(*, &quot;order&quot;)= int [1:3] 1 1 1
+##   .. .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. .. ..- attr(*, &quot;predvars&quot;)= language list(score, time, treatment, subject_id)
+##   .. .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:4] &quot;numeric&quot; &quot;numeric&quot; &quot;character&quot; &quot;numeric&quot;
+##   .. .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:4] &quot;score&quot; &quot;time&quot; &quot;treatment&quot; &quot;subject_id&quot;
+##   .. .. .. ..- attr(*, &quot;predvars.fixed&quot;)= language list(score, time, treatment)
+##   .. .. .. ..- attr(*, &quot;varnames.fixed&quot;)= chr [1:3] &quot;score&quot; &quot;time&quot; &quot;treatment&quot;
+##   .. .. .. ..- attr(*, &quot;predvars.random&quot;)= language list(score, subject_id)
+##   .. ..- attr(*, &quot;formula&quot;)=Class &#39;formula&#39;  language score ~ time + treatment + (1 | subject_id)
+##   .. .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   ..@ flist  :List of 1
+##   .. ..$ subject_id: Factor w/ 50 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+##   .. ..- attr(*, &quot;assign&quot;)= int 1
+##   ..@ cnms   :List of 1
+##   .. ..$ subject_id: chr &quot;(Intercept)&quot;
+##   ..@ lower  : num 0
+##   ..@ theta  : num 0.44
+##   ..@ beta   : num [1:3] 76.5649 -0.0494 -3.1397
+##   ..@ u      : num [1:50] 11.56 7.66 -1.63 5.59 -6.56 ...
+##   ..@ devcomp:List of 2
+##   .. ..$ cmp : Named num [1:10] 28.7 13.6 17397.2 2071.3 19468.5 ...
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:10] &quot;ldL2&quot; &quot;ldRX2&quot; &quot;wrss&quot; &quot;ussq&quot; ...
+##   .. ..$ dims: Named int [1:12] 200 200 3 197 50 1 1 1 0 3 ...
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:12] &quot;N&quot; &quot;n&quot; &quot;p&quot; &quot;nmp&quot; ...
+##   ..@ pp     :Reference class &#39;merPredD&#39; [package &quot;lme4&quot;] with 18 fields
+##   .. ..$ Lambdat:Formal class &#39;dgCMatrix&#39; [package &quot;Matrix&quot;] with 6 slots
+##   .. .. .. ..@ i       : int [1:50] 0 1 2 3 4 5 6 7 8 9 ...
+##   .. .. .. ..@ p       : int [1:51] 0 1 2 3 4 5 6 7 8 9 ...
+##   .. .. .. ..@ Dim     : int [1:2] 50 50
+##   .. .. .. ..@ Dimnames:List of 2
+##   .. .. .. .. ..$ : NULL
+##   .. .. .. .. ..$ : NULL
+##   .. .. .. ..@ x       : num [1:50] 0.44 0.44 0.44 0.44 0.44 ...
+##   .. .. .. ..@ factors : list()
+##   .. ..$ LamtUt :Formal class &#39;dgCMatrix&#39; [package &quot;Matrix&quot;] with 6 slots
+##   .. .. .. ..@ i       : int [1:200] 0 0 0 0 1 1 1 1 2 2 ...
+##   .. .. .. ..@ p       : int [1:201] 0 1 2 3 4 5 6 7 8 9 ...
+##   .. .. .. ..@ Dim     : int [1:2] 50 200
+##   .. .. .. ..@ Dimnames:List of 2
+##   .. .. .. .. ..$ : NULL
+##   .. .. .. .. ..$ : chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. ..@ x       : num [1:200] 0.44 0.44 0.44 0.44 0.44 ...
+##   .. .. .. ..@ factors : list()
+##   .. ..$ Lind   : int [1:50] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ Ptr    :&lt;externalptr&gt; 
+##   .. ..$ RZX    : num [1:50, 1:3] 1.32 1.32 1.32 1.32 1.32 ...
+##   .. ..$ Ut     :Formal class &#39;dgCMatrix&#39; [package &quot;Matrix&quot;] with 6 slots
+##   .. .. .. ..@ i       : int [1:200] 0 0 0 0 1 1 1 1 2 2 ...
+##   .. .. .. ..@ p       : int [1:201] 0 1 2 3 4 5 6 7 8 9 ...
+##   .. .. .. ..@ Dim     : int [1:2] 50 200
+##   .. .. .. ..@ Dimnames:List of 2
+##   .. .. .. .. ..$ : chr [1:50] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. .. ..$ : chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. ..@ x       : num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. .. .. ..@ factors : list()
+##   .. ..$ Utr    : num [1:50] 155 148 132 145 123 ...
+##   .. ..$ V      : num [1:200, 1:3] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ VtV    : num [1:3, 1:3] 200 0 0 500 1500 0 100 250 100
+##   .. ..$ Vtr    : num [1:3] 14974 37424 7330
+##   .. ..$ X      : num [1:200, 1:3] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. ..$ : chr [1:3] &quot;(Intercept)&quot; &quot;time&quot; &quot;treatmentB&quot;
+##   .. .. ..- attr(*, &quot;assign&quot;)= int [1:3] 0 1 2
+##   .. .. ..- attr(*, &quot;contrasts&quot;)=List of 1
+##   .. .. .. ..$ treatment: chr &quot;contr.treatment&quot;
+##   .. .. ..- attr(*, &quot;msgScaleX&quot;)= chr(0) 
+##   .. ..$ Xwts   : num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ Zt     :Formal class &#39;dgCMatrix&#39; [package &quot;Matrix&quot;] with 6 slots
+##   .. .. .. ..@ i       : int [1:200] 0 0 0 0 1 1 1 1 2 2 ...
+##   .. .. .. ..@ p       : int [1:201] 0 1 2 3 4 5 6 7 8 9 ...
+##   .. .. .. ..@ Dim     : int [1:2] 50 200
+##   .. .. .. ..@ Dimnames:List of 2
+##   .. .. .. .. ..$ : chr [1:50] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. .. ..$ : chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. .. ..@ x       : num [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. .. .. ..@ factors : list()
+##   .. ..$ beta0  : num [1:3] 0 0 0
+##   .. ..$ delb   : num [1:3] 76.5649 -0.0494 -3.1397
+##   .. ..$ delu   : num [1:50] 11.56 7.66 -1.63 5.59 -6.56 ...
+##   .. ..$ theta  : num 0.44
+##   .. ..$ u0     : num [1:50] 0 0 0 0 0 0 0 0 0 0 ...
+##   .. ..and 45 methods, of which 31 are  possibly relevant:
+##   .. ..  b, beta, CcNumer, copy#envRefClass, initialize, initializePtr,
+##   .. ..  installPars, L, ldL2, ldRX2, linPred, P, ptr, RX, RXdiag, RXi,
+##   .. ..  setBeta0, setDelb, setDelu, setTheta, setZt, solve, solveU, sqrL, u,
+##   .. ..  unsc, updateDecomp, updateL, updateLamtUt, updateRes, updateXwts
+##   ..@ optinfo:List of 8
+##   .. ..$ optimizer: chr &quot;nloptwrap&quot;
+##   .. ..$ control  :List of 1
+##   .. .. ..$ print_level: num 0
+##   .. ..$ derivs   :List of 2
+##   .. .. ..$ gradient: num 8.64e-08
+##   .. .. ..$ Hessian : num [1, 1] 143
+##   .. ..$ conv     :List of 2
+##   .. .. ..$ opt : num 0
+##   .. .. ..$ lme4: list()
+##   .. ..$ feval    : int 11
+##   .. ..$ message  : chr &quot;NLOPT_XTOL_REACHED: Optimization stopped because xtol_rel or xtol_abs (above) was reached.&quot;
+##   .. ..$ warnings : list()
+##   .. ..$ val      : num 0.44</code></pre>
 <div id="结果解释" class="section level3">
 <h3>结果解释</h3>
 <ul>
@@ -1717,16 +1850,16 @@ Y = X\beta + Z\gamma + \epsilon
 <div id="结果的可视化" class="section level3">
 <h3>结果的可视化</h3>
 <p>可以使用<code>ggplot2</code>包对混合模型的结果进行可视化，以展示个体间和总体的变化趋势。</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># 预测混合模型的值</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>pred_data <span class="ot">&lt;-</span> data</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>pred_data<span class="sc">$</span>predicted_score <span class="ot">&lt;-</span> <span class="fu">predict</span>(mixed_model, <span class="at">newdata =</span> pred_data, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># 绘制个体的原始得分和预测得分</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="fu">ggplot</span>(pred_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> score, <span class="at">group =</span> subject_id)) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> predicted_score), <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mixed Model Predictions&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># 预测混合模型的值</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>pred_data <span class="ot">&lt;-</span> data</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>pred_data<span class="sc">$</span>predicted_score <span class="ot">&lt;-</span> <span class="fu">predict</span>(mixed_model, <span class="at">newdata =</span> pred_data, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co"># 绘制个体的原始得分和预测得分</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="fu">ggplot</span>(pred_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> score, <span class="at">group =</span> subject_id)) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> predicted_score), <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mixed Model Predictions&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Time&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ## ℹ Please use `linewidth` instead.
 ## This warning is displayed once every 8 hours.
@@ -1818,7 +1951,7 @@ $(document).ready(function ()  {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-MML-AM_CHTML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
