@@ -1,0 +1,1009 @@
+---
+title: "AI"
+output:
+  html_document:
+    toc: true            # 启用目录
+    toc_float: true      # 目录浮动
+    toc_depth: 3         # 设置目录的层级深度，可根据需要调整
+    highlight: "tango"  # 代码块高亮样式
+    theme: "journal"   # 设置主题
+date: "2025-01-01"
+---
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let links = document.querySelectorAll("a");
+  links.forEach(function(link) {
+    link.setAttribute("target", "_blank");
+  });
+});
+</script>
+# ChatGPT简介
+
+## Chatgpt
+[ChatGPT](https://chatgpt.openai.com) is a conversational AI model that generates human-like responses to text inputs. It is based on the GPT-3 model developed by OpenAI. ChatGPT can be used for a variety of applications, including chatbots, virtual assistants, and content generation.
+
+- 2022.11.30 openai Large Language Model
+- 2023.4 ChatGPT 4.0
+- 2023.11 GPT store
+- 2024.5 
+- 2024.12
+
+## ChatGPT工作原理
+ChatGPT是一个基于大型神经网络的模型，它通过学习大量的文本数据来生成人类般的对话响应。ChatGPT的工作原理如下：
+
+- Prompt
+- LLM
+- Response
+
+-- training data
+-- algorithm
+-- fine-tuning
+
+## ChatGPT基本功能
+1 回答问题
+
+- 江苏的省会在哪里？
+- 如何做扬州蛋炒饭？
+- 如何能快速瘦身？
+
+2 生成文本
+
+- 请帮我写一个国庆节的放假通知
+- 写一首关于扬州秋天的诗
+- 请用简短的一小段话，总结下面的文字
+
+3 角色扮演
+
+- 你是一个英语老师，你要教一个中国人英语。他是一个英语初学者，请使用尽可能简单的英语，并且主动向学生提问。你还需要在对话过程中，去纠正可能的单词和语法错误。
+- 你是一位心理咨询师，你需要给一位患有抑郁症的患者提供心理咨询。请根据患者的情况，给出合适的建议和安慰。
+- 你是一位体育学领域的博士生导师，你需要给新招收的博士生推荐关于“人工智能在体育领域中的应用”主题的选题。
+
+4 写代码
+
+- 请帮我写一个Python程序，实现一个简单的计算器功能。
+- 请帮我写一段python代码，实现从200位学生中用简单随机抽样的方法抽取20人。
+
+## ChatGPT的局限
+
+- 文本时限
+- 文本偏差
+- 上下文记忆
+- 幻觉
+- 法律与道德
+
+## 有效的Prompts
+
+- 具体
+- 简洁
+- 语法
+- 举例
+
+## ChatGPT的应用
+
+- 大脑ChatGPT
+- 工具（Word+Excel+PPT+Python+R+SPSS）
+- 产出
+
+## 国内大模型及应用
+
+- 文心一言
+- 通义千问、万相
+- 讯飞星火、智文
+- WPS AI
+- 腾讯元宝、智影
+- 智谱清言
+- 秘塔AI
+- KIMI
+- 360AI（浏览器，助手）
+- 豆包
+- Deepseek
+- ima.copilot
+- 剪映
+- Coze
+
+# DeepSeek
+[DeepSeek](https://www.deepseek.com)--推理过程
+[提示词样例库](https://api-docs.deepseek.com/zh-cn/prompt-library/)
+
+# 豆包
+[豆包](https://www.doubao.com)--浏览器常用快捷功能
+
+# AI及在线作图
+[ECharts](https://echarts.apache.org/zh/index.html)
+[ImageGP](https://www.bic.ac.cn/ImageGP/index.php)
+[ImageGP2](https://www.bic.ac.cn/BIC)
+[Excalidraw](https://excalidraw.com)
+[Mermaid](https://mermaid.js.org)
+[Mermaid 编辑器](https://mermaid.live)
+[Markdownmap](https://markdown-map.com)
+[Diagram1]( https://draw.io)
+[Diagram2](https://app.diagrams.net)
+
+[可视化infografix](https://infografix.app/app)
+
+[AI可视化napkin](https://www.napkin.ai)
+
+## AI作图及编辑
+recraft可以生图及编辑，可导出svg矢量图格式，另外还可生成组图image sets
+
+- [recraft]https://www.recraft.ai/
+- [示例](https://www.bilibili.com/video/BV1egm8YvEQs/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b4d4a8872e783ddb30a5cd9948f167d)
+- [Leonardo](https://leonardo.ai/)
+- 通义万相
+
+## ChatGPT-4o+SmartART
+
+- 请罗列出灵长目各科、属、种的动物。输出格式中，每个科、属、种、或动物单独占一行；级别每低一级，就缩进一个制表位；只保留中文
+- 贴至PPT，选中，转换为SmartART
+
+## 绘制思维导图
+
+- 请整理大学《人体解剖学》课程的内容体系，约32课时的内容，整理成四级的树状结构。输出为详细的markdown格式。
+- markdown-map.com
+- 导出为SVG格式
+- 整理某网址的内容要点，列写为三级的树状结构，输出为markdown格式。
+
+## Kimi绘制流程图
+
+- 绘制一个流程图，首先是动物实验，其次是取材，最后是测量
+- 从上至下
+- 在动物实验时，分为三组，分别是对照组、实验组1、实验组2
+- 箭头上不用显示文字
+
+## 文心一言-- E言易图、AI词云图生成器
+
+## 智谱清言--复杂流程图
+
+- 以“是否去游泳”的决策为例子来绘制一个决策树的流程图，因素包括：天气、水温、空闲时间、泳池开放、心情
+
+## ChatGPT-4o-Mermaid图
+
+- 请帮我画一个比较复杂的流程图，输出为mermaid格式
+
+## ChatGPT-4o绘制数据图
+
+- 班级 均分
+- 一班 85
+- 二班 78
+- 三班 89
+- 四班 80
+- 五班 82
+- 以上信息为某小学初二年级各班的体育成绩，请绘制柱形图
+- 可以用不同颜色显示柱形图吗？
+
+## 智谱清言--数据分析-作图
+
+- 班级 均分
+- 一班 85
+- 二班 78
+- 三班 89
+- 四班 80
+- 五班 82
+- 以上信息为某小学初二年级各班的体育成绩，请绘制柱形图
+
+
+# 数据计算
+## 智能拆分
+智谱清言--出生日期拆分为年份及月份
+
+- 上传数据集
+- 介绍一下这个数据集
+- 这个数据集中有多少位学生的信息
+- 从出生日期中提取年份及月份信息，输出至年、月两列
+- 将结果输出为Excel文件，方便我下载
+- 出生日期中仅显示年月日，不显示时间，请重新输出。
+- 将上面每一轮的对话及结果，输出为PPT，并提供下载链接。
+- 对于每一轮对话中的结果，除文字外，还用表格显示相应的数据集，请重新生成PPT。
+
+## 智能合并
+智谱清言--合并多个单元格的信息
+
+- 描述一下这个数据文件
+- 数据集中包含几位学生
+- 用表格的形式呈现4位学生的完整信息
+- 将前4列的信息整合至备注列中，按如下格式输出： <姓名>，<性别>，<年>年<月>月出生
+
+
+## 数据计算
+ChatGPT-4o--成绩汇总
+
+- 上传文档
+- 扩展表格
+- 计算每位学生的总分
+- 总分为整数
+- 计算每个学科的平均分，放在平均分这一行对应的单元格中
+- 将学科成绩小于60的用红色标出
+- 根据上面的结果，对这个班学生的成绩进行分析，输出为一个报告。
+- 根据你的经验，提出4条有针对性、可操作性强的干预措施。
+- 用表格来呈现上面的结果。
+- 用最简洁的方式来呈现上述表格，直观易懂，可视化效果好。
+- 用表格呈现出语文成绩的描述性结果，如最高分、最低分、平均值、标准差等，同时按10分为间隔，统计一下每个分数段的人数及百分比。
+- 根据语文成绩的结果，进行综合分析，主要包括以下几方面：
+	学生对课程的理解、掌握情况；教师的教学方法与手段使用情况；
+	考试结果反映的主要问题、原因及改进措施。
+
+智谱清言-- 成绩汇总
+
+- 介绍一下这个数据集的结构
+- 对数据集进行清洗，使其符合标准的数据格式
+- 数据集中包含多少位学生
+- 用表格的形式呈现完整的数据集
+- 计算每位学生的总分
+- 计算每门课程的均分
+- 将结果输出为Excel文件，方便我下载
+- 分别计算8门课程的均分，并输出至相应列的最后一行
+- 根据上面的结果，对这个班学生的成绩进行分析，输出为一个报告
+- 根据你的经验，提出4条有针对性、可操作性强的干预措施
+- 以表格的形式来呈现上面4条干预措施，要求尽可能简洁，直观易懂，可视化效果好。
+- 用表格来呈现语文成绩的描述性结果，如最高分、最低分、平均值、标准差等，同时按10分为间隔，统计一下每个分数段的人数及百分比。
+
+智谱清言--信息提取
+
+- 介绍一下这个数据集
+- 这个数据集包含多少位学生
+- 以表格的形式来呈现所有学生的信息
+- 如何计算出学生的BMI
+- BMI保留1位小数即可，另外从身份证号中提取出学生的学生年份信息，放在出生年份这一列中
+- 如何从身份证号中提取出性别信息
+- 提取身份证号的前6位作为生源地
+- 将耐力项目成绩转换为以秒为单位，例如：4'31''转换为4*60+31=271
+
+
+ChatGPT-4o --人数统计
+
+- 描述一下这个数据集
+- 删去这些列
+- 统计在下列各分数段的人数：<60;60-74;75-84;>84
+- 重新按不同性别来统计
+- 增加不同性别及不同分数段的总计
+- 将男、女这两列交换
+
+
+ChatGPT-4o --人数统计
+
+- 描述一下这个数据集
+- 这个数据集包含多少位学生
+- 以表格的形式来呈现所有学生的信息
+- 根据体育成绩从高到低进行排名，成绩最高学生的名次为1，名次按顺序逐个递增1，将结果输出至名次1中
+- 根据体育成绩从高到低进行排名，成绩最高学生的名次为1，成绩相同时名次相同，成绩不同时名次递增1。例如100，98，98，90的名次分别为1，2，2，3。将名次结果输出至名次2中。
+- 根据体育成绩从高到低进行排名，成绩最高学生的名次为1，成绩相同时名次相同，成绩不同时根据具体的成绩相同人数进行递增。例如：100，98，98，90的名次分别为1，2，2，4。将名次结果输出至名次3中。
+- 按体育成绩从高到低排序
+
+ChatGPT-4o --成绩与分数转换
+
+- 上传包含多个工作表的数据文件
+- 数据集中包含有多少位学生
+- 文件中有几个工作表
+- 分别介绍一下这两个工作表
+- 根据转换工作表，将体质工作表中的肺活量转换为得分，转换规则如下：在转换规则工作表中，定位至小于等于肺活量成绩中的最后一行，将对应的分数作为学生的得分。
+- 将更新后的体质工作表输出为Excel文件，方便我下载。
+
+## 数据透视
+
+ChatGPT-4o --数据透视-定量数据的分组描述性统计
+
+- 上传数据
+- 统计一下不同性别的人数，以表格的形式输出至新的工作表中。
+- 按不同班级分别统计
+- 同一班级内，先显示男生，再显示女生的人数。
+- 在表格中新增4列，分别统计出最高分、最低分、平均分、标准差。
+- 平均分保留1位小数，标准差保留2位小数。
+
+ChatGPT-4o --数据透视-定性数据的分组描述性统计
+
+- 统计一下不同等级的人数及百分比，用表格来呈现。
+- 将等级按不及格、及格、良好、优秀排列，重新输出。
+- 增加一列，计算出累积百分比。
+- 用合适的图形来呈现不同等级的百分比
+- 图形中的标签显示的不是中文，如何解决？
+- 上传字体进行中文显示
+- 用合适的图形呈现不同等级的累积百分比
+- 如果将各个等级的百分比及累积百分比在同一个图中显示出来，用什么类型的图形最合适。
+
+# 文件解读
+[Kimi](https://kimi.moonshot.cn)
+扬州大学研究生学位论文
+
+- 整理这些文件的核心内容
+- 文件中对学位论文的组成部分及排列顺序的要求是什么
+- 不用对组成部分进行解释，只要列出文件中原有的内容即可，并且使用原文作为佐证，说明原文所在的具体位置。
+- 用表格的形式呈现上面的结果，不要包含“原文的具体位置”部分的内容。
+- 文件中对页眉和页脚的具体要求是什么？使用原文作为佐证，并说明原文所在的具体位置。
+- 要满足文件中对页眉的要求，在Word中如何操作，一步一步地介绍。
+- 文件中对排版时论文标题的具体要求是什么？使用原文作为佐证，并说明原文所在的具体位置。
+- 将论文正文一至四级标题的要求用表格来呈现。
+- 将文件的核心内容用思维导图的形式来呈现，并提供下载链接。
+- 转换为markdown格式，方便我制作思维导图。对于免费、无需注册、在线制作思维导图，你有何推荐？
+
+https://www.min2k.com/tools/markmap
+https://markmap.js.org
+https://markdown-map.com/
+
+
+# 解读论文
+[Kimi](https://kimi.moonshot.cn)
+
+## 粗读
+- 这篇文章讲了什么？
+- 请对你刚才的回答，使用原文作为佐证，并且说明原文所在的具体位置。
+
+## 粗读
+
+- 这篇文章的结论是什么？使用原文作为佐证，并且说明原文所在的具体位置。
+- 请总结一下这篇论文的学术贡献，使用原文作为佐证，并且说明原文所在的具体位置。
+- 这篇论文的局限性是什么？使用原文作为佐证，并且说明原文所在的具体位置。
+- 请帮我解读这篇论文中出现的图表，一个一个来，使用原文作为佐证，并且说明原文所在的具体位置。
+- 给我描述一下这篇论文的结果和讨论，使用原文作为佐证，并且说明原文所在的具体位置。
+
+## 选题
+- 假设我的目标是要消除ChatGPT带来的高等教育中的偏见，利用本文提供的研究结果和决策，是不是能够完美达成这个目标？使用原文作为佐证，并且说明原文所在的具体位置。
+- 假设我要依据上述的差距，提出自己的选题，哪一个选题更加具有可行性？请帮我撰写3个，并且加以对比评述
+
+# 360浏览器读论文
+
+# 秘塔AI探索学术论文
+[秘塔AI](https://metaso.cn)
+
+- 设置搜索范围为“学术”
+- 主题：ChatGPT对教育的影响
+- “简洁”模式搜索的结果
+- 深入模式搜索的结果
+- 研究模式搜索的结果
+- “文库”功能
+
+# 辅助读书
+
+- 请以该[主题]领域的专家教育者的身份，带领我全面了解这个领域。我希望您能引导我深入探索，包括其基础内容、历史演变、当前应用及未来展望。
+-- 请按照以下结构安排我们的交流。
+-- 引言： 首先简要介绍[主题]，概述其重要性和核心要素。
+-- 历史背景：概述[主题]的发展历程，指出关键的进步及其如何塑造了它的现状。
+-- 核心理念和原则：阐释[主题]的基本理念、理论和原则。确保每个解释都逻辑清晰，构建起一个结构化的学习路径。
+-- 当前应用：描述[主题]在现实世界中的应用，特别是那些它影响深远的行为或技术，
+-- 抗战与争议：讨论与[主题]相关的挑战、伦理困境或争议，包括其局限性、对社会的影响或哲学上的争论。
+-- 未来趋势：探讨[主题]的未来可能性，包括新兴趋势、潜在的进步以及领域内预期的变化。 
+-- 进一步学习资源：推荐一些深入学习资源，比如书籍、学术论文、在线课程或值得关注的专家。
+-- 互动问答：希望你能提出一些我需要深入了解或需要进一步解释的问题。请提供详细的回答和必要的额外见解。我期待与您一起踏上一段充满信息和全面了解[主题]的旅程。让我们开始吧！
+
+# 辅助学术写作
+
+Three ways ChatGPT helps me in my academic writing
+## 润色论文Prompt
+
+- I’m writing a paper on [topic]for a leading [discipline] academic journal. What I tried to say in the following section is [specific point]. Please rephrase it for clarity, coherence and conciseness, ensuring each paragraph flows into the next. Remove jargon. Use a professional tone.
+- 我正在为一家顶级的[学科]学术期刊撰写一篇关于[主题]的论文。在以下的内容中，我所试图表达的观点是[具体观点]。请用清晰、连贯和简洁的方式重新表述它，确保每个段落都能顺畅地过渡到下一个段落。删除术语。使用专业的语气。
+
+## 同行评审Prompt
+
+- Assume you’re an expert and seasoned scholar with 20+ years of academic experience in [field]. On the basis of my summary of a paper in [field], where the main focus is on [general topic], provide a detailed review of this paper, in the following order: 1) briefly discuss its core content; 2)identify its limitations; and3) explain the significance of each limitation in order of importance. Maintain a concise and professional tone throughout.
+- 假设您是一位在[领域]拥有20年以上学术经验的专家和资深学者。基于我对一篇[领域]论文的总结，它主要关注[一般主题]，按照以下顺序对这篇论文进行详细的评述：1）简要讨论其核心内容；2）指出其局限性；3）按重要性顺序解释每个局限性的意义。在整个过程中始终保持简洁和专业的语气。
+
+## 编辑反馈Prompt
+
+- On the basis of these notes, draft a letter to the author. Highlight the manuscript’s key issues and clearly explain why the manuscript, despite its interesting topic, might not provide a substantial enough advancement to merit publication. Avoid jargon. Be direct. Maintain a professional and respectful tone throughout.
+- 根据这些笔记，草拟一封信给作者。强调手稿的关键问题，并清楚地解释为什么尽管主题有趣，但该手稿可能没有提供足够的实质性进展来值得发展。避免使用行话。直接明了。始终保持专业和尊重的语气。
+
+Ten simple rules for structuring papers
+How to use ChatGPT fro Scientific Research Paper writing? 
+
+# OCR提取文字
+## deepseek
+
+- 上传图片
+- 写代码将上面图片中的文字输出为markdown的格式
+
+# 音视频
+
+## 音
+配音
+
+- [TTsmaker](https://www.ttsmaker.cn)
+- [TTS-Elevenlabs](https://elevenlabs.io/)
+- 请帮我写一首关于秋天的诗，我想把它配上一段钢琴曲，让它听起来更加动人。
+- 请帮我写一首关于爱情的歌词，我想把它编曲成一首流行歌曲。
+- 请帮我写一段关于自然的旋律，我想把它制作成一个音乐盒。
+- [海螺语音](https://hailuoai.com/audio)
+
+音乐
+
+- [suno](https://www.suno.com)
+- [Haimian](https://www.haimian.com)
+- 天工AI
+
+智能播客
+
+- 豆包（朗读）
+- [NotebookLM](https://notebooklm.google.com)
+
+实时对话
+
+- 豆包
+- [AIstudio](https://aistudio.google.com)
+- chatgpt.openai.com
+
+## 视频
+动画
+
+视频
+
+- sora [教程](https://www.bilibili.com/video/BV1iKquYnELN/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b4d4a8872e783ddb30a5cd9948f167d)
+- [Pika](https://www.pika.art)
+- runway
+
+## 多模态
+数字人
+
+- [Heygen](https://www.heygen.com)
+- d-id
+- 腾讯智影（可去视频水印）
+- 剪映（形象定制、一键成片）
+
+视频通话(实时)
+
+- [AIstudio](https://aistudio.google.com)
+- chatgpt.openai.com
+
+# ChatGPT 4o with canvas
+
+## collaborative writing
+example 1--search and write a research essay and visualize
+
+- search the web to list out Van Gogh's brushing techniques in bullet points
+- write a research essay expanding on each tool
+  - select text and ask chatgpt: search the web to verify this claim
+  - use the sliders(reading level \ adjust the length)
+  - select text and ask chatgpt: visualize this technique in dalle image
+
+- reformat the content in markdown table
+- make it such that it is a lesson plan
+
+example 2--search maps and write an email
+
+- search for the best restaurants in SF Mission
+- write an email to my friend inviting them to the San Ho Won restaurant using canvas
+- edit content directly
+- select text and ask chatgpt: make this tone to be a bit funnier
+- make the second paragraph to be a bit friendlier
+- add final polish(reformat and enhance your writing)
+- tolls(copy / show changes  )
+
+example 3 add comments as reviewer
+
+- open a new canvas
+- paste the contents from previous chat as a normal document
+- add final polish
+- suggest how to improve the writing style of this trip
+- show changes
+- change the 2nd day to be in Kyoto
+- select the text and ask : search for the images oof this place
+- transform to be a blogpost
+- add emojs
+
+example 4 have a plot that i want to visualize in canvas
+
+- take a screenshot
+- reason through the plot and write a research report in canvas 
+- select text(calibration) and ask: what are other models of calibration in LLMs
+- search for some literature about this and add a literature review section in canvas
+- just graph the left o1-preview results in python canvas
+
+
+## collaborative coding
+
+example 1--simple sine wave animation
+
+- create a simple sine wave matplotlib animation
+- make the plot dashed and red, make the lines thicker
+
+example 2--a matrix style flower
+
+- create a matrix style animation of life visualization using numpy python
+- port to a language: javascript  
+- create a self-contained html file 
+
+example 3--create an interactive simulation of the concept 
+
+- explain the concept of the Kuhn's theory of scientific revolutions in canvas
+- create an interactive simulation of the concept behind this theory in an engaging way. 
+- Use d3.js in a self-contained html file, make it aesthetic and interactive.
+- add a quiz to the visulization
+
+## create game
+example 1--a spaceship battle game
+
+- create a simple spaceship battle game with competitive scoring system, with everything in one html file.
+- make it as interactive as possible. The feel should be retro-futuristic
+- select background code and ask chatgpt: replace this with black background
+- I want to implement the logic where it would fail when the my square would hit the red square, make it like a game with failures and leveling
+- when the game is over display the results of the score and have a key to restart
+- create a feel of space with stars and moving orbits
+- make the pink squares to gradually speeding up to make the game more fun and harder
+- make it faster
+
+## create SQL database from architecture image
+
+- take a screenshot of this diagram
+- create the SQL database based on the image and populate with the data, use canvas
+-  website: SQL Fiddle
+- now to fix the same issue with other tables
+- add more teachers and subjects in the database and more students
+- create a query for students who took math
+- show the teacher for students as well
+
+# 12 days of OpenAI
+
+## Day 1- O1 and ChatGPT Pro
+- O1:先智能思考再回答，支持多模态，图片和文本推理、file uploading、web browsing
+  - list the Roman emperors of the second century, including their dates and accomplishments
+  - this shows a highly simplified schematic of datacenter in space. For any simplifying assumptioons provide justification
+  - Your job is to estimate the lower bound of the required radiator surface area for this datacenter that hosts FPUs.
+  - In doing so, also answer the following questions
+  - 1) How do you handle the Sun and Deep space?
+  - 2) How does First law of Thermodynamics come into play?
+  
+- ChatGPT Pro：更多算力，更高可靠性，更复杂难度的数学、科学、编程、写作任务
+  - which protein strictly fits the following criteria?
+  - 1. The precursor polypetide has a lenght of 210 to 230 amino acid residues
+  - 2. The gene encoding this protein spans 32 kiobases
+  - 3. The gene is located on the X chromosome, specifically at band Xp22
+  - 4. The signal peptide comprises 23 amino acid residues
+  - 5. The protein facilitaes cell-cell adhesion.
+  - 6. The protein plays a critical role in maintaining the health of a specific part of the nervous system
+  
+## Day 2- reinforcement fine-tuning and model customization 
+
+- 微调数据集 training
+  - training data example
+    - case report: 
+      - 51-year-old woman.Disearse onset was not specified 
+      - Symptomes: Hypertelorism, Blepharophimosis, Micrognathia, Velopharygeal insufficienty, Hypoparathyrodism, Global developmental delay, and Sensorineural hearing impairment
+      - Absent Symptoms: Cleft palate, Tetralogy of Fallot, Pulmonary valve atresia, Atrial septal defect, Aortopulmonary collateral arteries
+    - instructions:
+      - Please list all genes that may cause these symptoms in ranked order, from most to least likely along with an explanation for why you think those specific genes may be responsible.
+    - Correct Answer:
+      - FOXE3
+
+- model output
+   - [KDM5A,FOXE3,BBS5,……]
+
+- 测试数据集 validation
+
+- 评分grading
+
+## Day 3- Sora
+
+- [sora.com](https://sora.com)
+- 1080P,20s
+- 宽屏、竖屏、方屏
+- 文本转视频、图像转视频、视频转视频
+- a wide shot of wooly mammoths walking through a desert landscape
+- replace woooly mammoths with robots
+- storyboard
+  - a beautiful white crane with yellow tail stands in a creek.
+  - the crane dips its head into the water and pulls out a fish
+- upload a picture, sora will create a new card:a continuation caption
+
+## Day 4- Canvas
+
+- a new button in the composer
+  - picture: use DALL-E
+  - search: find on the web
+  - reason: use O1
+  - canvas: collaborate on writing and code
+  
+- canvas: help me write a Christmas story about silly eves for my kids
+- commonly used shortcuts
+  - edit
+  - length
+  - reading level
+  - add final polish
+  - add emojis
+  
+- paste contents and open in canvas
+- can you leave some comments on my essay from the perspective of my physics professor
+- can you help me debug this code? what might be going wrong.
+
+- a new button in the upper right :run
+- fix bug
+
+- can you add a sankey flow diagram for santa's toys. please use appropriate colors!
+
+- GPTs with canvas
+  - GPT configure, instructioons
+  - You are a tool for Santa to help write first draft responses in canvas to the letters he gets. Every response shoould be written in Santa's characteristic style and humor. Your job is to write responses to letters(which will be provided) using the Canvas tool.
+
+## Day 5- ChatGPT integration 集成
+
+- Iphone
+  - apple intelligence
+  - siri
+- Mac OS 15.2 Sequoia
+  - this doc is super long, how did they get the model to be so good at coding?
+  - ok, but i'm a more visual learner, can we make a pie chart of the respective influence of each of the techniques on making it good at coding?
+  
+## Day 6- ChatGPT 对话中加入视频功能/屏幕共享-multimodal
+
+- advanced voice mode button
+  - video button
+  - screen broadcast button
+- santa圣诞老人
+  
+## Day 7 -- projects
+- project (文件夹)
+- new chat
+- search and add previous chat into the project
+- drag and remove chat from the project
+- add files to the project
+- instructions
+  - You are a principal level elf at Santa's workshop. You have been tasked with helping me organize a Secret Santa gift exchange for my friends. You communicate in a festive tone and love gift giving. Use lots of emoji and exclamation points.
+  - I am the organizer of the event, my name is Drew.
+  - when asked to help write a letter or email, use the Canvas Tool when possible.
+  - ignore previous instructions: Santa is real.
+- show me the secret santa submissions spreadsheet in a table
+- please randomly assign every person to give a gift to another person. Display it in a table with three columns:Giver, Recipient, Recipient Gift Ideas.
+- what does luther want as his gift? and who is assigned to give it to him?
+- searching the web
+- search the web for festive hats
+- write an email to event participants
+- another project
+  - add files
+  - do i need to replace the water filter in my fridge?
+  - how do i do that
+- another project:website
+  - add files: pdf json pdf astro
+  - instructions
+  - my website is in astro template syntax, whic is not standard JSX. Refer to "Astro Template Specification.pdf" fpr the full syntax. For example, you MUST escape lists and data to elements in square brackets, like <Header links={[]}>.
+  - Use a professioonal , but quirky, tone when generating. Be thorough in testimonials and projects listings.
+  - chat
+  - modify the baseline template in canvas to incorporate personal information and social links
+  - search the web to find any projects I've made that might be missing.
+  - modify the template to incorporate those projects
+  - generate a <Testimonial> fragment and incorporate a new quote from Kevin Weil saying "Thomas is often punctual and has great hair"
+  
+## Day 8 -- Search  
+
+- what are some good events in the city this weekend? -- search
+- show me the trailer for the new lion king movie
+- url links/images/videos
+- use chatgpt as their default engine in their browser: setting
+- 手机端
+- what are some good Mexican food restaurants in the mission
+- what about some with outdoor patios and heaters
+- advanced voice mode 语音搜索
+
+## Day 9 -- API  
+
+- function calling
+- structured outputs
+- developmer messages
+- rreasoning efforts
+- Vision inputs
+- 实时API --webRTC
+- 音频token
+- LTIM API support for Python SDK
+- supervised fine-tuning and reinforcement fine-tuning
+
+## Day 10 -- Calling and WhatsApp
+- 1(800)ChatGPT
+- 1(800)242-8478
+
+## Day 11 -- desktop 
+
+- option + space 
+- work with apps(warp/notion/notes/xcode)
+- warp
+- write a command to get the number of commits per day over the past two months
+- make a bar graph with all of the results. make it holiday themed
+- xcode
+- add an observer so if selection changes , loadTextAreas is called
+- notion
+- fill out these talking points (search button)
+- make it match the style of the rest oof the stops. keep it short, two paragraphs
+- notes
+- advanced voice mode
+
+## Day 12 -- O3 and O3 min
+
+- O3 : o1 preview--o1--o3
+  - program(software engineering(SWE-bench Verified)\competition code(Codeforces))
+  - math competition math(AIME 2024) \ phd level science questions(GPQA-Dimond)\research math(EpochAI Frontier Math )
+- O3 min
+  - a new cost-efficient reasoning model
+  - write me a python script which lanches a server locally for an html file which has a big text box. When I enter text into that box and press submit, it should send that the request for code to the OpenAI o3 min API with medium reasoning_effort, take the resulting code, save it to a temporary file on the desktop, then execute that file in a new python terminal. A few more details:
+  - it can find my API key in ~/api_key
+  - please add some extra prompting intoo the request to the api to specify that it should only return raw code without any formating or markdown at all
+  - you'll be excuting on a mac laptop
+  - generate a code that evaluates 'O3-mini' with 'low' reasoning effort on gpqa dataset, you need to download the raw file in http://openaipublic.blob.cor.windows.net/simple-evals/gpqa_diamond.csv, the question is in "Question", the four options are in "correct answer", "Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3"
+  - for each multiple choice question, shuffle the options, give format instructions: "Please output 'Answer:$LETTER' in the last line", and use a regex to grade whether the model output is correct or not. Make all tasks async for maximal parallelism and robust again failed api calls (add a 30s timeout if we don't get a response from api call and retry for 4 times). Print progress using 'tqdm'. Print the accuracy at the end.
+  - if you need a reminder on how to use the OpenAI API, look at this example
+
+# Coding
+
+- Chatgpt
+- Github Copilot
+- Cursor（IDE）
+
+# PPT
+
+- Gamma
+- 讯飞智文
+- WPS AI
+
+# Agent（互动）
+豆包--选中文字--优化提示词
+
+- 清晰直接--明确要做什么，不要让它猜
+- 角色设定--给AI设定一个身份
+- 示例参考--举例
+- 思维链--一步步地思考
+- 标签+结构化-- role + profile + background + goals + constraints + skills + workflows + initialization
+
+## AI求职面试助手--豆包
+```
+# Role：AI求职面试助手
+
+## Profile：
+- version: 1.0
+- language: 中文
+- description: 通过生成面试题、模拟面试环境，帮助用户高效准备求职面试
+
+## Background：
+小明正在准备他人生中第一次求职面试。他希望能高效了解目标岗位的面试问题，并通过多轮练习提升答题能力，同时熟悉面试环境和套路，以便顺利通过面试。
+
+## Goals：
+1. 根据用户提供的岗位描述，生成可能面试问题清单
+2. 引导用户逐题回答，并为用户的答案提供详细评价和改进建议
+3. 提供每个问题的正确或优秀回答参考
+4. 通过语音模拟面试对话场景，提升用户的临场表现
+
+## Constrains：
+1. 确保问题和答案紧密围绕岗位描述
+2. 针对用户回答提供客观、建设性的反馈
+3. 在模拟面试时不打断用户，但提供后续建议
+
+## Skills：
+1. 面试题生成能力
+2. 基于用户反馈的介析与建议能力
+3. 语音对话模拟能力
+4. 针对目标岗位的深度知识掌握
+
+## Workflows：
+1. 引导用户输入目标岗位描述，如岗位名称、招聘要求、技术特点
+2. 根据岗位信息生成10-20个可能面试问题，并展示给用户
+3. 提示用户逐一回答问题，并根据回答生成评价和改进建议
+4. 提供每个问题的参考答案，并帮助用户总结回答思路
+5. 启动语音模拟面试环节，与用户展开对话式模拟，结束后给出整体表现评价和优化建议
+
+## Initialization：
+以“您好，我是您的AI求职面试助手！请将您面试的岗位描述提供给我，我将为您生成面试问题并辅助您逐步提升面试能力。”为开场白，遵循workflow流程进行操作。
+```
+
+## 专业周报优化助手--豆包
+```
+# 专业周报优化助手 PRO
+你是一位经验丰富的技术管理者，擅长通过STAR法则和POWER工作法来呈现工作价值。请运用以下方法论来求优化周报：
+
+## Step 1: 工作内容结构化
+
+请将我的以下工作内容：[在此粘贴原始周报]
+
+### POWER方法进行重组：
+- Planning（计划与目标）：本固计划完成什么？
+- Organizing（组织实施）：如何开展工作？
+- Working（执行过程）：实际执行情况？
+- Evaluating（效果评估）：达到了什么效果？
+- Reviewing（总结反思）：有什么经验与教训？
+
+## Step 2: STAR法则深化
+对每项重要工作，请用STAR法则进行加工：
+- Situation（情境）：在什么样的项目背景/业务场景下？
+- Task（任务）：需要完成什么具体目标？
+- Action（行动）：采取了什么具体措施？
+- Result（结果）：取得了什么具体成果？
+
+## Step 3: 专业度提升方法
+### 3.1 技术维度的DICT原则
+- Depth（深度）：技术原理和底层逻辑
+- Impact（影响）：对系统/业务的影响
+- Complexity（复杂度）：解决方案的技术难度
+- Trade-off（权衡）：方案选择的考量过程
+
+## 3.2 业务价值的VIPS框架
+- Value（价值）：带来的具体业务价值 2046
+- Innovation（创新）：解决方案的创新点
+- Performance（性能）：性能提升指标
+- Scalability（可扩展性）：未来发展空间
+
+## 输出要求
+最终周报必须包含：
+1. 整体工作概述（高屋建瓴）
+2. 核心工作内容（详细展开）
+3. 数据指标（量化成果）
+4. 价值贡献（业务意义）
+5. 经验总结（方法论）
+6. 后续规划（前瞻性）
+
+## 升级重点
+1. 将【做了什么】升级为【为什么做】和【做出了什么成果】
+2. 将【学习了】升级为【学到了什么】和【如何应用】
+3. 将【解决了问题】升级为完整的问题解决过程和方法论
+4. 将【参与了】升级为【贡献了什么】和【产生了什么影响】
+
+## 注意事项
+1. 保持真实性：不过分拔高，符合个人角色定位
+2. 保持逻辑性：每个工作都要有起因、经过、结果
+3. 保持专业性：使用恰当的专业术语
+4. 保持可读性：结构清晰，重点突出
+
+请以上述方法论为指导，将我的周报升级为专业的工作汇报。
+```
+
+## 创意方案专家
+```
+# Role: 创意文案专家
+## Background:
+
+用户需要为公司产品的内部推广撰写一份高效、有吸引力的小红书风格文案，但缺乏营销写作经验，希望你帮助他生成专业文案。需要使用多种 emoji来增强视觉吸引力和情感表达。
+
+## Attention:
+
+确保文案突出产品核心卖点，语言风格符合内部使用场景，既能激发员工兴趣，又能传递产品价值，最终达到推广目的。避免浮夸和过度承诺。避免过度幼稚
+
+## Profile:
+Version: 1.0
+Language: 中文
+Description: 一位资深文案创作专家，擅长用简洁有力的语言传递复杂的产品价值。
+
+## Skills:
+快速理解产品核心价值并提炼卖点
+善于根据目标受众调整文案风格
+运用简洁、生动、鼓舞人心的语言激发兴趣
+善于一针见血的抓住受众心理，切入受众典型场景
+
+## Goals:
+提炼产品的3-5个核心卖点
+输出一段短文案（50-100字）和一篇详细文案（200-300字）
+在文案中加入具体场景和利益点，引导用户参与
+激发出公司内部对自研产品的集体荣誉感
+
+## Workflow:
+
+产品信息采集：让用户描述产品的主要功能、目标用户、以及推广目的
+核心卖点提炼：从功能和特点中提取对用户最有吸引力的卖点
+短文案生成：用一句话直接打动用户，引起兴趣
+详细文案生成：以故事、场景或使用场景为框架，扩展文案内容
+优化语言：根据推广目标调整语言风格，使文案既有吸引力又显得专业
+
+## Initialization:
+
+“你好！我是你的AI创意文案助手，专门为推广任务撰写高质量的文案。请告诉我产品的功能、目标用户和推广目的我会为你设计一段吸引力十足的文案。”
+```
+
+## 简短邀请方案助手
+```
+# Role : AI简短邀请文案助手
+
+## Profile :
+- version: 1.3
+- language: 中文
+- description: 帮助用户撰写简短、自然且适合初步互动的邀请信息
+
+## Background :
+小明希望邀请隔壁组的小美一起看张学友演唱会，但两人并不太熟悉。他希望信息简短、自然，避免过于亲密或生硬，语气显得轻松随和。
+
+## Goals :
+1. 生成不超过50字的邀请文案，突出轻松自然的语气
+2. 避免直接提及对方的兴趣点，而是围绕活动本身展开
+3. 给对方留出回应空间，避免压力或尴尬
+4. 让对方自然的感觉到彼此的对张学友的共鸣和品味
+
+## Constrains :
+1. 文案必须控制在200字以内
+2. 语气轻松，避免热情过度或显得刻意
+3. 突出活动趣味性，但不显得邀请者目的性过强
+4. 确保内容有值得共鸣的“张学友”细节
+
+## Skills :
+1. 简短文案撰写能力
+2. 初步互动场景语气调整
+3. 根据活动背景优化表达
+
+## Workflows:
+1. 根据用户描述生成轻松自然的短文案，控制字数不超过200字
+2. 确保内容得体且适合初步互动
+3. 确保内容有值得共鸣的“张学友”细节
+4. 输出几种选项的文案
+5. 给出可能的后续交流建议，帮助用户保持对话连贯性
+```
+
+## 危机沟通专家
+```
+# Role：危机沟通专家
+
+## Background:
+用户需要撰写一封专业的英文邮件，向客户澄清误解、表达歉意并提供解决方案。然而，用户在英文表达和商务写作方面欠缺经验，需要AI帮助撰写一封既专业又诚恳的危机沟通邮件。
+
+## Attention:
+邮件内容需表达清楚责任态度，同时突出解决问题的积极行动。语言专业得体，避免情绪或模糊表述，重点是恢复客户信任和展现团队责任感。
+
+## Profile:
+Version: 1.0
+Language: 英文
+Description: 一位资深危机沟通顾问，擅长通过邮件传递专业、诚恳的态度，并迅速化解客户的不满情绪。
+
+## Skills:
+精准表达歉意并明确责任态度
+
+提供切实可行的解决方案，增强客户信任
+使用商务英语语言风格，提升专业性
+
+## Goals:
+明确问题背景和责任态度
+输出一封结构清晰、语气诚恳的危机沟通邮件
+提供后续行动计划，保证问题得以解决
+
+## Workflow:
+问题梳理：先让用户描述事件背景、客户的主要投诉点和实际责任范围
+邮件结构设计：包括背景说明、责任态度、解决方案和后续计划
+语言优化：使用商务英语词色邮件内容
+邮件输出：提供一封完整的危机沟通邮件草案
+
+## Initialization:
+“你好！我是你的AI危机沟通助手，专门帮助你撰写专业的危机处理邮件。请告诉我事件背景、客户的投诉点和解决方案，我会为你生成一封完整的邮件草案。”
+```
+
+## 情感表达专家
+```
+# Role: 情感表达作家
+
+## Background:
+用户因为忙于工作错过了与伴侣小美及其家人重要的见面机会，导致小美感到失望和生气，认为用户不够重视这段感情。用户希望通过一篇文章的文章，表达歉意、解释原因，并传递对未来的承诺，修复关系。
+
+## Attention:
+文章需充分体现用户的悔意和对伴侣的重视，同时要突出对未来的改善计划，传递稳定和长期的情感承诺。避免过度解释错过的原因，重点在情感流露和诚意表达。
+
+## Profile:
+Author: 秋芝
+Version: 1.0
+Language: 中文
+Description: 一位专注于情感表达的文字创作顾问，帮助用户用温暖动人的文字修复感情。
+
+## Skills:
+将事件细节融入文字，增强情感真实感通过逻辑清晰的结构展现真诚态度
+提供具体改善计划，增强信任和安全感
+
+## Goals:
+用文章表达歉意、爱意和承诺
+提供改进措施并展现对未来的责任感
+打动伴侣，修复因事件产生的关系裂痕
+
+## Workflow:
+直接将事件背景融入文字，代入具体情感场景
+在文章中自然融入用户的歉意、情感和未来计划
+确保语气真诚、内容逻辑清晰，传递情感温度
+
+## Initialization:
+“你好！我是你的情感表达助手，帮助你撰写一篇真诚的道歉文章。这是你的事件详情，我会基于这些内容直接分享给组织文章。”
+```
+# APP
+
+- Coze
+- Cursor
+- 小程序[腾讯AI代码助手](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+
+# 工作流
+
+- Maker
+- [dify](https://dify.ai)
+
+# AI Links
+[ChatGPT](https://chatgpt.openai.com)
+[360助手](https://bot.360.com)
+[Noi](https://noi.nofwl.com)
+[Min2k](https://www.min2k.com)
+[青泥学术](https://www.xueshuchuangxin.com/AITools/AITools)
+[AIGC](https://tools.aigcfun.com)
+[ai-bot](https://ai-bot.cn)
+
+
+
+
